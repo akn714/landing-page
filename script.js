@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('active');
+            burger.classList.toggle('toggle');
+            navLinks.forEach((link, index) => {
+                link.style.animation = '';
+            });
 
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
