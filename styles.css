@@ -4,6 +4,7 @@
     --background-color: rgba(249, 249, 249, 0.8);
     --text-color: #333333;
     --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(2, 0, 14, 0.116);
     --glass-border: rgba(255, 255, 255, 0.2);
 }
 
@@ -20,7 +21,7 @@ body {
 header {
     background-color: var(--glass-bg);
     backdrop-filter: blur(10px);
-    padding: 1rem 5%;
+    padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -32,6 +33,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -41,24 +46,25 @@ nav {
     text-shadow: 0 0 10px rgba(210, 0, 0, 0.5);
 }
 
-nav ul {
+.nav-links {
     list-style-type: none;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
-nav ul li {
+.nav-links li {
     margin-left: 2rem;
 }
 
-nav ul li a {
+.nav-links li a {
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     color: var(--primary-color);
 }
 
@@ -83,7 +89,8 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-image: url('./image.jpg'), linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
+    /* background-image: url('https://placehold.co/1920x1080'), linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8)); */
+    background: linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
     background-blend-mode: overlay;
     background-size: cover;
 }
@@ -128,7 +135,8 @@ h1, h2, h3 {
 }
 
 #features {
-    background-image: url('./image.jpg'), linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
+    /* background-image: url('https://placehold.co/1920x1080'), linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8)); */
+    background: green;
     background-blend-mode: overlay;
     background-size: 1920px 1080px, auto;
 }
@@ -161,7 +169,8 @@ h1, h2, h3 {
 }
 
 #how-it-works {
-    background-image: url('./ppt-bg-2.jpg'), linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
+    /* background-image: url('https://placehold.co/1920x1080'), linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8)); */
+    background: red;
     background-blend-mode: overlay;
     background-size: 1920px 1080px, auto;
 }
@@ -208,7 +217,8 @@ h1, h2, h3 {
 }
 
 #faq {
-    background-image: url('./ppt-bg-1.jpg') 1920px 1080px, linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8));
+    /* background-image: url('https://placehold.co/1920x1080') 1920px 1080px, linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 116, 217, 0.8)); */
+    background: black;
     background-blend-mode: overlay;
     background-size: 1920px 1080px, auto;
 }
@@ -257,6 +267,19 @@ footer a:hover {
     color: var(--primary-color);
 }
 
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
     .hero, .feature-highlight {
         flex-direction: column;
@@ -273,5 +296,140 @@ footer a:hover {
 
     .stat {
         margin-bottom: 2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+     /* Show burger menu on mobile */
+    .burger-menu {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 5rem;
+    }
+
+     /* Burger menu animation */
+    .burger-menu.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+
+    .burger {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+    }
+    .burger.active .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content, .feature-item, .faq-item {
+        padding: 1rem;
+    }
+
+    .cta-button {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        /* background-color: grey; */
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 1rem 0;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }

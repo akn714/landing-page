@@ -17,7 +17,12 @@
     <header>
         <nav>
             <div class="logo">MILES</div>
-            <ul>
+            <div class="burger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
@@ -34,7 +39,7 @@
                 <a href="#" class="cta-button">Get Started</a>
             </div>
             <div class="hero-image">
-                <img src="./image.jpg" height="400" weight="600" alt="MILES in action">
+                <img src="https://placehold.co/600x400" height="400" weight="600" alt="MILES in action">
             </div>
         </section>
 
@@ -42,23 +47,23 @@
             <h2>Why Choose MILES?</h2>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Personalized Replies">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Personalized Replies">
                     <h3>Personalized Replies</h3>
                 </div>
                 <div class="feature-item">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Goal-Oriented Conversations">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Goal-Oriented Conversations">
                     <h3>Goal-Oriented Conversations</h3>
                 </div>
                 <div class="feature-item">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Relationship Management">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Relationship Management">
                     <h3>Relationship Management</h3>
                 </div>
                 <div class="feature-item">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Customizable Parameters">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Customizable Parameters">
                     <h3>Customizable Parameters</h3>
                 </div>
                 <div class="feature-item">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Conversation Health Tracking">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Conversation Health Tracking">
                     <h3>Conversation Health Tracking</h3>
                 </div>
             </div>
@@ -74,7 +79,7 @@
                     <p>Suggest responses that match your tone, accent, lingo, and slang, ensuring every message sounds authentically you.</p>
                 </div>
                 <div class="feature-image">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Persona-Driven Replies">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Persona-Driven Replies">
                 </div>
             </div>
 
@@ -84,7 +89,7 @@
                     <p>Set objectives for your chats and let MILES subtly guide the conversation towards your desired outcome.</p>
                 </div>
                 <div class="feature-image">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Goal-Oriented Conversations">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Goal-Oriented Conversations">
                 </div>
             </div>
 
@@ -94,7 +99,7 @@
                     <p>Track and manage your relationships with an intuitive dashboard, giving you unprecedented control over your digital interactions.</p>
                 </div>
                 <div class="feature-image">
-                    <img src="./ppt-bg-1.jpg" height="100" width="100" alt="Personal Relationship Manager">
+                    <img src="https://placehold.co/100x100" height="100" width="100" alt="Personal Relationship Manager">
                 </div>
             </div>
         </section>
@@ -141,5 +146,16 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>j
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navUl = document.querySelector('nav ul');
+
+            burgerMenu.addEventListener('click', function() {
+                navUl.classList.toggle('show');
+                burgerMenu.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
