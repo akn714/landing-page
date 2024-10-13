@@ -9,24 +9,35 @@
     /* src: url("./spotlight-stencil-font/SpotlightDemoItalic-Rppne.otf"); */
     src: url("./sphere-fez-2-font/SphereFez-eZxam.ttf")
 }
+@font-face {
+    font-family: "proto mono";
+    src: url("./font/ProtoMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: "proxon";
+    src: url("./Proxon-Sans-Serif-Font/proxon.ttf");
+}
 
 :root {
-    --primary-color: #ff4d4d;
-    --secondary-color: #4d4dff;
-    --background-color: #121212;
+    --primary-color: #d40065;
+    --secondary-color: #1b1125;
+    --background-color: #000000;
     --text-color: #e0e0e0;
-    --glass-bg: rgba(30, 30, 30, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(27, 17, 37, 0.7);
+    --glass-border: rgba(212, 0, 101, 0.1);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
+    font-family: 'proto mono' !important;
+    /* font-family: "proxon" !important; */
     /* font-family: "my font"; */
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: var(--text-color);
-    background: linear-gradient(135deg, #000000, #1a1a1a);
+    background: linear-gradient(135deg, #000000, #1b1125);
     background-attachment: fixed;
 }
 
@@ -52,11 +63,11 @@ nav {
 }
 
 .logo {
-    font-family: "my font";
+    /* font-family: "my font"; */
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
 }
 
 .nav-links {
@@ -86,8 +97,12 @@ main {
 }
 
 h1, h2, h3 {
-    color: var(--text-color);
-    text-shadow: 0 0 10px rgba(77, 77, 255, 0.5);
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
+}
+
+section {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.733);
 }
 
 .parallax-section {
@@ -103,7 +118,8 @@ h1, h2, h3 {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;  
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 26, 0.8));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(27, 17, 37, 0.8));
+    /* background: black; */
     background-blend-mode: overlay;
     background-size: cover;
 }
@@ -120,6 +136,11 @@ h1, h2, h3 {
 
 .hero-image {
     flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover{
+    transform: scale(1.05);
 }
 
 .hero-image img {
@@ -132,23 +153,24 @@ h1, h2, h3 {
 .cta-button {
     display: inline-block;
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--background-color);
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 25px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    box-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
 }
 
 .cta-button:hover {
-    background-color: #ff3333;
+    background-color: #b30056;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+    box-shadow: 0 5px 15px rgba(212, 0, 101, 0.5);
 }
 
 #features {
-    background: #1a1a1a;
+    background: #1b1125;
+    background: black !important;
     background-blend-mode: overlay;
     background-size: 1920px 1080px, auto;
 }
@@ -162,10 +184,12 @@ h1, h2, h3 {
 .feature-item {
     text-align: center;
     background-color: var(--glass-bg);
+    background-color: #0d0811;
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid var(--glass-border);
+    border: 1px solid #8080803b;
     transition: transform 0.3s ease;
 }
 
@@ -177,11 +201,12 @@ h1, h2, h3 {
     width: 80px;
     height: 80px;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 10px rgba(212, 0, 101, 0.3));
 }
 
 #how-it-works {
-    background: #2a2a2a;
+    background: #000000;
+    /* background: black; */
     background-blend-mode: overlay;
     background-size: 1920px 1080px, auto;
 }
@@ -191,10 +216,12 @@ h1, h2, h3 {
     align-items: center;
     margin-bottom: 4rem;
     background-color: var(--glass-bg);
+    /* background-color: #0d0811; */
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 10px;
-    border: 1px solid var(--glass-border);
+    /* border: 1px solid var(--glass-border); */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .feature-highlight.reverse {
@@ -221,23 +248,26 @@ h1, h2, h3 {
 }
 
 #stats {
-    font-family: "my font2";
+    /* font-family: "my font2"; */
     display: flex;
     justify-content: space-around;
     text-align: center;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(51, 51, 51, 0.8));
+    background: linear-gradient(135deg, rgba(27, 17, 37, 0.8), rgba(0, 0, 0, 0.8));
+    background: #000000 !important  ;
     color: var(--text-color);
 }
 
 .stat h3 {
     font-size: 3rem;
     margin-bottom: 0;
-    color: var(--text-color);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, var(--primary-color), #1a00d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(212, 0, 101, 0.3);
 }
 
 #faq {
-    background: #0a0a0a;
+    background: #000000 !important;
     background-blend-mode: overlay;
     background-size: 1920px 1080px, auto;
 }
@@ -253,15 +283,17 @@ h1, h2, h3 {
 
 .faq-item h3 {
     color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
 }
 
 footer {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 26, 26, 0.9));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(27, 17, 37, 0.9));
     color: var(--text-color);
     text-align: center;
     padding: 2rem 0;
     border-top: 1px solid var(--glass-border);
+    background: black;
 }
 
 footer ul {
@@ -451,10 +483,91 @@ footer a:hover {
     }
 
     .toggle .line2 {
-        opacity: 0;
+        opacity: 0;  
     }
 
     .toggle .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+}
+
+/* FAQ Section Styles */
+.faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-question {
+    cursor: pointer;
+    padding: 1rem 0;
+    margin: 0;
+    position: relative;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-question:hover {
+    color: #007bff;
+}
+
+.faq-answer {
+    display: none;
+    padding-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Parallax effect */
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.2; /* Adjust this value to make the background more or less visible */
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+    padding: 100px 5%;
+}
+
+/* Animation on scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adjust existing styles */
+.hero, #how-it-works, #features, #stats, #faq {
+    background: none;
 }
