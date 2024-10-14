@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MILES - Your Personal WhatsApp Reply Assistant</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="miles-logo.png" type="image/x-icon">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
     <style>
         .hero-image img {
             height: 400px !important;
             width: 600px !important;
         }
+        .logo{
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">MILES</div>
+            <a href="#" class="logo">MILES</a>
             <div class="burger-menu">
                 <div></div>
                 <div></div>
@@ -55,9 +63,9 @@
                         <h3>Persona-Driven Replies</h3>
                         <p>Suggest responses that match your tone, accent, lingo, and slang, ensuring every message sounds authentically you.</p>
                     </div>
-                    <div class="feature-image">
+                    <!-- <div class="feature-image">
                         <img src="https://placehold.co/100x100" height="100" width="100" alt="Persona-Driven Replies">
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="feature-highlight reverse fade-in">
@@ -65,9 +73,9 @@
                         <h3>Goal-Oriented Conversations</h3>
                         <p>Set objectives for your chats and let MILES subtly guide the conversation towards your desired outcome.</p>
                     </div>
-                    <div class="feature-image">
+                    <!-- <div class="feature-image">
                         <img src="https://placehold.co/100x100" height="100" width="100" alt="Goal-Oriented Conversations">
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="feature-highlight fade-in">
@@ -75,9 +83,9 @@
                         <h3>Personal Relationship Manager</h3>
                         <p>Track and manage your relationships with an intuitive dashboard, giving you unprecedented control over your digital interactions.</p>
                     </div>
-                    <div class="feature-image">
+                    <!-- <div class="feature-image">
                         <img src="https://placehold.co/100x100" height="100" width="100" alt="Personal Relationship Manager">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -113,7 +121,7 @@
 
         <section id="stats" class="parallax-section">
             <div class="parallax-bg" style="background-image: url('ppt-bg-2.jpg');"></div>
-            <div class="parallax-content">
+            <div class="parallax-content" style="display: flex;">
                 <div class="stat fade-in">
                     <h3>50%</h3>
                     <p>Increase in conversation goal achievement</p>
@@ -162,9 +170,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.querySelector('.burger-menu');
-            const navUl = document.querySelector('nav ul');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
 
-            
             burger.addEventListener('click', () => {
                 // Toggle Nav
                 nav.classList.toggle('nav-active');
@@ -184,7 +192,7 @@
             });
 
             // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            document.querySelectorAll('.nav-links li a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     nav.classList.toggle('nav-active');
@@ -200,14 +208,25 @@
                 });
             });
 
+            function closeAllFAQ(question) {
+                let FaqItem = document.querySelectorAll('.faq-item');
+                FaqItem.forEach(item => {
+                    if(question!=item.children[0]) item.children[0].classList.remove('active');
+                    item.style.borderBottom = '1px solid #e0e0e0';
+                    let answer = item.children[1];
+                    answer.style.display = 'none';
+                });
+            }
+
             // Add FAQ toggle functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 const answer = question.nextElementSibling;
                 answer.style.display = 'none';
                 question.addEventListener('click', () => {
-                    answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+                    closeAllFAQ(question);
                     question.classList.toggle('active');
+                    answer.style.display = question.classList.contains('active') ? 'block' : 'none';
                     question.parentElement.style.borderBottom = question.classList.contains('active') ? '1px solid var(--primary-color)' : '1px solid #e0e0e0';
                 });
             });
