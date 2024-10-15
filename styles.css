@@ -43,7 +43,7 @@ h2::selection {
 }
 
 body {
-    text-shadow: 0 0 1px #fff6fb, 0 0 5px rgba(255, 176, 215, 0.8); 
+    text-shadow: 0 0 1px #fff6fb, 0 0 5px rgba(255, 176, 215, 0.8);
     font-family: 'Poppins', sans-serif;
     font-family: 'proto mono' !important;
     /* font-family: "proxon" !important; */
@@ -60,7 +60,7 @@ header {
     background-color: var(--glass-bg);
     backdrop-filter: blur(8px);
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 0 var(--primary-color) !important;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -112,26 +112,44 @@ nav {
     color: var(--primary-color);
 }
 
+.install-button {
+    font-weight: 600;
+    background-color: rgba(112, 89, 133, 0.244);
+    backdrop-filter: blur(10px);
+    color: var(--text-color);
+    border: 1px solid white;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.5s ease !important;
+}
+
+.install-button:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
 main {
     padding-top: 80px;
 }
 
-h1,
-h2,
-h3 {
+h1 {
     color: var(--primary-color);
     text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
-}
-
-h1,
-h2 {
     text-align: center;
 }
 
 h2 {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
+    text-align: center;
     font-size: 2em;
     margin-bottom: 50px;
     margin-top: 0;
+}
+
+h3 {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
 }
 
 section {
@@ -150,10 +168,6 @@ section {
 
 #home {
     text-align: center;
-}
-
-#home .cta-button {
-    margin-top: 30px;
 }
 
 .parallax-section {
@@ -207,6 +221,7 @@ section {
 }
 
 .cta-button {
+    margin-top: 30px;
     display: inline-block;
     background-color: var(--text-color);
     color: var(--primary-color);
@@ -215,7 +230,7 @@ section {
     border-radius: 25px;
     font-weight: 600;
     transition: all 0.8s ease !important;
-    box-shadow: 0 0 50px var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
 }
 
 .cta-button:hover {
@@ -225,6 +240,7 @@ section {
     transform: scale(1.1) !important;
     box-shadow: 0 0 1px var(--secondary-color);
 }
+
 
 #features {
     background: #1b1125;
