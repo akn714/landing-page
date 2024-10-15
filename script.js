@@ -129,13 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
         fadeElements.forEach((element) => {
             const elementTop = element.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-            if (elementTop < windowHeight * 0.6) {
+            if (elementTop < windowHeight * 0.8) {
                 element.classList.add("visible");
             }
             else{
                 element.classList.remove("visible");
             }
         });
+
+        // header bg
+        var header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 });
 
