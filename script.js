@@ -39,12 +39,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
 });
 
+let lastScrollTop = 0;
+let navbar = document.querySelector('header');
+let timer;
+
 window.addEventListener('scroll', function() {
-    const parallaxSections = document.querySelectorAll('.parallax-section');
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    parallaxSections.forEach(section => {
-        const distance = window.pageYOffset;
-        const speed = 0.5;
-        section.style.backgroundPositionY = `${distance * speed}px`;
-    });
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            navbar.classList.add('hidden');
+        }, 1000);
+    } else {
+        // Scrolling up
+        clearTimeout(timer);
+        navbar.classList.remove('hidden');
+    }
+    
+    lastScrollTop = scrollTop;
 });
