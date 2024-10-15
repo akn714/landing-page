@@ -30,7 +30,20 @@
     --glass-border: rgba(212, 0, 101, 0.1);
 }
 
+::selection {
+    background-color: rgb(197, 85, 173);
+    color: var(--text-color);
+}
+
+h1::selection,
+h2::selection {
+    background-color: rgb(197, 85, 173);
+    color: var(--text-color);
+    -webkit-text-fill-color: var(--text-color);
+}
+
 body {
+    text-shadow: 0 0 1px #fff6fb, 0 0 5px rgba(255, 176, 215, 0.8); 
     font-family: 'Poppins', sans-serif;
     font-family: 'proto mono' !important;
     /* font-family: "proxon" !important; */
@@ -110,13 +123,15 @@ h3 {
     text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
 }
 
-h1, h2 {
+h1,
+h2 {
     text-align: center;
 }
 
 h2 {
     font-size: 2em;
     margin-bottom: 50px;
+    margin-top: 0;
 }
 
 section {
@@ -161,6 +176,10 @@ section {
     background-size: cover;
 }
 
+.hero p {
+    font-size: 0.8em;
+}
+
 .hero-content {
     flex: 1;
     padding-right: 2rem;
@@ -202,8 +221,9 @@ section {
 .cta-button:hover {
     color: var(--text-color);
     background-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 0 5px var(--secondary-color);
+    /* transform: translateY(-2px); */
+    transform: scale(1.1) !important;
+    box-shadow: 0 0 1px var(--secondary-color);
 }
 
 #features {
@@ -296,6 +316,7 @@ section {
     /* border-radius: 10px; */
     /* border: 1px solid var(--glass-border); */
     /* border: 1px solid rgba(255, 255, 255, 0.1); */
+    margin-bottom: 20px;
 }
 
 .feature-highlight.reverse {
@@ -367,7 +388,7 @@ section {
     /* border: 1px solid var(--glass-border); */
 }
 
-.faq-item h2 {  
+.faq-item h2 {
     margin-top: 0;
     margin-bottom: 50px;
 }
@@ -420,7 +441,7 @@ footer a:hover {
 }
 
 @media (min-width: 900px) {
-    #stats .parallax-content > div {
+    #stats .parallax-content>div {
         display: flex;
     }
 }

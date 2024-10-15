@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fadeElements.forEach((element) => {
             const elementTop = element.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-            if (elementTop < windowHeight * 0.6) {
+            if (elementTop < windowHeight * 0.8) {
                 element.classList.add("visible");
             }
             else{
