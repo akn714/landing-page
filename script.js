@@ -136,6 +136,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.classList.remove("visible");
             }
         });
+
+        // header bg
+        var header = document.querySelector('header');
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 });
 
