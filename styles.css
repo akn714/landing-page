@@ -45,7 +45,7 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid transparent;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease, transform 0.5s ease;
 }
 
 header.scrolled {
@@ -183,7 +183,7 @@ section {
     background-size: cover;
 }
 
-.hero-content {
+/* .hero-content {
     flex: 1;
     padding-right: 2rem;
     background-color: var(--glass-bg);
@@ -191,7 +191,7 @@ section {
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid var(--glass-border);
-}
+} */
 
 .hero-image {
     flex: 1;
@@ -304,6 +304,29 @@ section {
     text-align: center;
 }
 
+.feature-highlight-main {
+    display: grid;
+    grid-template-areas: 
+    'fh-title fh-title'
+    'fh1 fh-video'
+    'fh2 fh-video'
+    'fh3 fh-video'
+    'fh-footer fh-footer';
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.feature-highlight-video {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-highlight-video video {
+    margin: 30px;
+    width: 100%;
+}
+
 .feature-highlight {
     display: flex;
     align-items: center;
@@ -312,12 +335,12 @@ section {
     /* background-color: #0d0811; */
     /* backdrop-filter: blur(10px); */
     /* padding: 2rem; */
-    width: 50%;
+    /* width: 50%; */
     text-align: justify;
     /* border-radius: 10px; */
     /* border: 1px solid var(--glass-border); */
     /* border: 1px solid rgba(255, 255, 255, 0.1); */
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .feature-highlight.reverse {
@@ -436,8 +459,19 @@ footer a:hover {
     .feature-highlight {
         flex-direction: column;
     }
+    
+    .feature-highlight-main {
+        display: grid;
+        grid-template-areas: 
+        'fh-title'
+        'fh-video'
+        'fh1'
+        'fh2'
+        'fh3'
+        'fh-footer';
+        grid-template-columns: auto;
+    }
 
-    .hero-content,
     .feature-text,
     .feature-image {
         /* padding: 0; */
@@ -530,7 +564,6 @@ footer a:hover {
 
 @media (max-width: 480px) {
 
-    .hero-content,
     .feature-item,
     .faq-item {
         padding: 1rem;
