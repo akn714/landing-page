@@ -322,6 +322,18 @@ section {
     margin-bottom: 60px;
 }
 
+.demo-video {
+    text-align: center;
+    padding: 50px;
+}
+
+.demo-video img {
+    border: 10px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--primary-color);
+    border-radius: 30px;
+}
+
 .feature-highlight {
     display: flex;
     align-items: center;
