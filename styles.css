@@ -51,13 +51,13 @@ header {
 
 header.scrolled {
     background-color: var(--glass-bg);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(4px);
     border-bottom: 1px solid var(--glass-border);
 }
 
-header.hidden {
+/* header.hidden {
     transform: translateY(-100%);
-}
+} */
 
 nav {
     display: flex;
