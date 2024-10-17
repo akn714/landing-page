@@ -53,9 +53,12 @@
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    #home {
-        margin-inline: 0;
-        padding-inline: 0;
+    #home .parallax-content {
+        margin-inline: 6px;
+    }
+
+    #home h1 {
+        font-size: 2rem;
     }
 
     .parallax-content {

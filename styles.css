@@ -26,7 +26,7 @@ h2::selection {
 }
 
 body {
-    text-shadow: 0 0 1px #fff6fb, 0 0 5px rgba(255, 176, 215, 0.8);
+    text-shadow: 0 0 1px var(--text-color), 0 0 5px rgba(255, 176, 215, 0.8);
     font-family: 'Poppins', sans-serif;
     font-family: 'proto mono' !important;
     line-height: 1.6;
@@ -160,7 +160,7 @@ section {
 }
 
 #home h1 {
-    text-shadow: 0px 50px 1000px var(--primary-color) !important;
+    text-shadow: 0px 50px 1000px var(--primary-color);
     letter-spacing: -5px;
     line-height: 1.1;
     margin-top: 0;
@@ -171,7 +171,6 @@ section {
     background: linear-gradient(to bottom right, var(--primary-color), #1a00d0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px rgba(212, 0, 101, 0.3);
 }
 
 #home .parallax-content {
