@@ -15,6 +15,7 @@
 ::selection {
     background-color: rgb(197, 85, 173);
     color: var(--text-color);
+    text-shadow: none;
 }
 
 h1::selection,
@@ -319,6 +320,7 @@ section {
     background: #000000;
     background-blend-mode: overlay;
     background-size: 1920px 1080px, auto;
+    text-align: center;
 }
 
 #how-it-works h2 {
@@ -332,7 +334,7 @@ section {
 
 .demo-video {
     text-align: center;
-    padding: 50px;
+    margin: 50px;
 }
 
 .demo-video img {
@@ -340,6 +342,8 @@ section {
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px var(--primary-color);
     border-radius: 30px;
+    max-width: 100%;
+    height: auto;
 }
 
 .feature-highlight {
@@ -571,6 +575,7 @@ footer a:hover {
     font-size: 1.2em;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    border: 1px solid white;
 }
 
 .gradient-btn:hover {
@@ -591,19 +596,22 @@ footer a:hover {
     background-position: right center;
 }
 
-/* .download .cta-button {
+.download .cta-button {
     color: var(--secondary-color);
     box-shadow: 0 0 25px var(--secondary-color);
+    margin-top: 0;
+    text-shadow: none;
     background: none;
-} */
+    border: 1px solid var(--secondary-color);
+}
 
-/* .download .cta-button:hover {
+.download .cta-button:hover {
     color: var(--text-color);
     text-shadow: none !important;
     background-color: var(--secondary-color);
     transform: scale(1.06);
     box-shadow: 0 0 1px var(--secondary-color);
-} */
+}
 
 @keyframes gradient-animation-bg {
     0% {
