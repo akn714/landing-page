@@ -5,6 +5,10 @@
 }
 
 @media (max-width: 768px) {
+    #home .parallax-content {
+        margin-inline: 0;
+    }
+
     .hero {
         gap: 0;
     }
@@ -93,6 +97,18 @@
 }
 
 @media (max-width: 480px) {
+    #home .parallax-content {
+        margin-inline: 0;
+    }
+
+    h1 {
+        font-size: 3rem !important;
+    }
+
+    h2 {
+        font-size: 1.5em !important;
+        margin-inline: 0;
+    }
 
     .feature-item,
     .faq-item {

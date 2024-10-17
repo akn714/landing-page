@@ -165,7 +165,7 @@ section {
     line-height: 1.1;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 10px;
+    padding-bottom: 10px;
     font-size: 3.5rem;
     font-weight: 900;
     background: linear-gradient(to bottom right, var(--primary-color), #1a00d0);
