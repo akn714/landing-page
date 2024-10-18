@@ -159,7 +159,7 @@ section {
 
 #home h1 {
     text-shadow: 0px 50px 1000px var(--primary-color);
-    letter-spacing: -5px;
+    letter-spacing: -2px;
     line-height: 1.1;
     margin-top: 0;
     margin-bottom: 0;
@@ -415,7 +415,7 @@ section {
 }
 
 .download h1 {
-    letter-spacing: -5px;
+    letter-spacing: -2px;
     line-height: 1.1;
     margin-top: 0;
     margin-bottom: 0;
