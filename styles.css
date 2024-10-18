@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 @font-face {
     font-family: "proto mono";
     src: url("./font/ProtoMono-Regular.ttf");
@@ -28,7 +29,7 @@ h2::selection {
 body {
     text-shadow: 0 0 1px var(--text-color), 0 0 5px rgba(255, 176, 215, 0.8);
     font-family: 'Poppins', sans-serif;
-    font-family: 'proto mono' !important;
+    /* font-family: 'proto mono' !important; */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -59,16 +60,6 @@ header.scrolled {
     transform: translateY(-100%);
 } */
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 5%;
-    box-sizing: border-box;
-}
-
-
 .logo {
     background: linear-gradient(60deg, var(--primary-color), var(--secondary-color), rgb(253, 0, 118), rgb(37, 40, 255));
     background-size: 300% 300%;
@@ -81,6 +72,15 @@ nav {
     text-shadow: 0 0 10px rgba(212, 0, 101, 0.5);
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
 .nav-links {
     display: flex;
     justify-content: center;
@@ -90,11 +90,8 @@ nav {
     padding: 0;
 }
 
-.nav-links li {
-    margin: 0 1rem;
-}
-
 .nav-links li a {
+    margin: 0 1rem;
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
@@ -108,7 +105,7 @@ nav {
 .nav-right {
     display: flex;
     align-items: center;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
 }
 
 .install-button {
@@ -156,6 +153,7 @@ section {
 }
 
 #home {
+    min-height: 100vh;
     text-align: center;
 }
 
@@ -182,7 +180,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 100px 5%;
+    padding: 20px 5%;
     position: relative;
     overflow: hidden;
 }
@@ -215,34 +213,6 @@ section {
     background-size: cover;
 }
 
-.hero-content {
-    flex: 1;
-    padding-right: 2rem;
-    background-color: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid var(--glass-border);
-}
-
-.hero-image {
-    flex: 1;
-    transition: transform 0.3s ease;
-}
-
-.hero-image:hover {
-    transform: scale(1.05);
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    /* height: 400px;
-    width: 600px; */
-}
-
 .cta-button {
     margin-top: 30px;
     display: inline-block;
@@ -262,6 +232,36 @@ section {
     background-color: var(--primary-color);
     transform: scale(1.06);
     box-shadow: 0 0 1px var(--secondary-color);
+}
+
+#how-it-works {
+    background: #000000;
+    background-blend-mode: overlay;
+    background-size: 1920px 1080px, auto;
+    text-align: center;
+}
+
+#how-it-works h2 {
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
+.demo-video {
+    text-align: center;
+    margin: 50px;
+}
+
+.demo-video img {
+    border: 10px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px var(--primary-color);
+    border-radius: 30px;
+    max-width: 100%;
+    height: auto;
 }
 
 #features {
@@ -310,85 +310,10 @@ section {
     filter: drop-shadow(0 0 10px rgba(212, 0, 101, 0.3));
 }
 
-.feature-item h3 {
+/* .feature-item h3 {
     color: var(--secondary-color);
     text-shadow: 0 0 10px var(--secondary-color);
-}
-
-#how-it-works {
-    background: #000000;
-    background-blend-mode: overlay;
-    background-size: 1920px 1080px, auto;
-    text-align: center;
-}
-
-#how-it-works h2 {
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px var(--primary-color);
-    margin-top: 0;
-    margin-bottom: 60px;
-}
-
-.demo-video {
-    text-align: center;
-    margin: 50px;
-}
-
-.demo-video img {
-    border: 10px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px var(--primary-color);
-    border-radius: 30px;
-    max-width: 100%;
-    height: auto;
-}
-
-.feature-highlight {
-    display: flex;
-    align-items: center;
-    /* margin-bottom: 4rem; */
-    /* background-color: #0d0811; */
-    /* backdrop-filter: blur(10px); */
-    /* padding: 2rem; */
-    width: 50%;
-    text-align: justify;
-    /* border-radius: 10px; */
-    /* border: 1px solid var(--glass-border); */
-    /* border: 1px solid rgba(255, 255, 255, 0.1); */
-    margin-bottom: 30px;
-}
-
-.feature-highlight.reverse {
-    flex-direction: row-reverse;
-}
-
-.feature-highlight:nth-child(odd) .feature-image {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.feature-highlight:nth-child(even) .feature-image {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.feature-text,
-.feature-image {
-    flex: 1;
-}
-
-.feature-text h3 {
-    color: var(--secondary-color);
-}
-
-.feature-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
+} */
 
 #stats {
     display: flex;
@@ -414,54 +339,13 @@ section {
 }
 
 #faq h2 {
-    background: linear-gradient(to bottom, var(--primary-color), #9a8bf8);
+    font-size: 2.5rem;
+    background: linear-gradient(to bottom, var(--secondary-color), #9a8bf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 10px var(--primary-color);
 }
 
-footer {
-    color: var(--text-color);
-    text-align: center;
-    padding: 1rem 0;
-}
-
-footer ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-footer ul li {
-    margin: 0 1rem;
-}
-
-footer a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--primary-color);
-}
-
-.burger-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.burger-menu div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-/* FAQ Section Styles */
 .faq-item {
     margin-bottom: 1rem;
     border-bottom: 1px solid #e0e0e0;
@@ -516,7 +400,6 @@ footer a:hover {
     transform: translateY(0);
 }
 
-/* download Section */
 .download {
     background-color: var(--background-color);
     background-position: center;
@@ -622,6 +505,34 @@ footer a:hover {
     }
 }
 
+footer {
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+footer ul li {
+    margin: 0 1rem;
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
 /* Adjust existing styles */
 .hero,
 #how-it-works,
@@ -629,4 +540,77 @@ footer a:hover {
 #stats,
 #faq {
     background: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contact {
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 100px 5%;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 3rem;
+    margin: 0 !important;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.contact-form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1px solid var(--primary-color);
+    outline: none;
+}
+
+.contact-form button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+    padding-inline: 0 !important;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary-color);
 }

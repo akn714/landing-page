@@ -1,3 +1,16 @@
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
     body {
@@ -96,7 +109,8 @@
     #features h2,
     #stats h2,
     #faq h2,
-    .download h1 {
+    .download h1,
+    #contact h2 {
         font-size: 1.8rem;
         margin-inline: 0px;
         padding-inline: 0;
@@ -147,10 +161,6 @@
     .parallax-content,
     .feature-item {
         padding: 1rem;
-    }
-
-    .faq-item {
-        margin-inline: 0;
     }
 
     .cta-button {
